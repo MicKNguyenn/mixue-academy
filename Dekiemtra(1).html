@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đề Thi Đánh Giá Năng Lực Nghiệp Vụ - Học Viện Mixue</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            .print-border-none {
+                border: none !important;
+                background: transparent !important;
+                padding: 0 !important;
+            }
+            body {
+                background-color: #ffffff !important;
+                color: #000000 !important;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+            input[type="text"], textarea {
+                border: none !important;
+                border-bottom: 1px dotted #4b5563 !important;
+                background: transparent !important;
+                box-shadow: none !important;
+                color: #000000 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            textarea {
+                border: 1px dotted #4b5563 !important;
+                border-radius: 4px !important;
+                resize: none !important;
+            }
+            input[type="radio"] {
+                -webkit-appearance: radio !important;
+                appearance: radio !important;
+            }
+        }
+        .mixue-red {
+            color: #ED1C24;
+        }
+        .bg-mixue-red {
+            background-color: #ED1C24;
+        }
+        .border-mixue-red {
+            border-color: #ED1C24;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased">
+
+    <!-- TOP CONTROL PANEL (NO-PRINT) -->
+    <header class="no-print bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <img src="input_file_0.png" alt="Mixue Snowman" class="w-10 h-10 object-contain" onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6-tcVJYAeVX4_I-n2DX3w_uibmmpb9kYvynwEdVYfGCZuAC31RfFbrxM&s=10'">
+                <div>
+                    <h1 class="text-base font-bold text-slate-900 leading-tight">Hệ Thống Đào Tạo & Đánh Giá</h1>
+                    <p class="text-xs text-slate-500">MIXUE - SINCE 1997 • ICE CREAM & TEA</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-3">
+                <!-- Print Trigger Button -->
+                <button onclick="window.print()" class="px-5 py-2.5 text-sm font-bold rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition flex items-center gap-1.5 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                    </svg>
+                    Xuất File / In Đề Thi
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN EXAM CONTAINER -->
+    <main class="flex-grow max-w-5xl mx-auto w-full p-4 sm:p-6 md:p-8 my-6 bg-white shadow-md border border-slate-100 rounded-xl print-border-none print-shadow-none print-my-0 print-p-0">
+        
+        <!-- EXAM HEADER -->
+        <div class="border-b-4 border-mixue-red pb-6 mb-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
+                <!-- Brand logo left -->
+                <div class="flex items-center gap-4">
+                    <img src="input_file_6.png" alt="Mixue Logo" class="h-16 object-contain" onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6-tcVJYAeVX4_I-n2DX3w_uibmmpb9kYvynwEdVYfGCZuAC31RfFbrxM&s=10'">
+                    <div class="border-l-2 border-slate-300 pl-4">
+                        <h2 class="text-xl font-black text-slate-950 uppercase tracking-wider">BỘ PHẬN BO-QC</h2>
+                        <p class="text-xs font-bold text-slate-500 tracking-widest uppercase">Mixue Vietnam</p>
+                    </div>
+                </div>
+                <!-- Exam Title right -->
+                <div class="text-center md:text-right">
+                    <h1 class="text-2xl font-black text-slate-900 uppercase">Đề Kiểm Tra số 1</h1>
+                    <p class="text-sm font-semibold text-slate-500 mt-1">Đánh Giá Toàn Diện Cửa Hàng Trưởng</p>
+                    <p class="text-xs text-slate-400 mt-0.5">Thời gian làm bài: 90 phút | Tổng điểm: 100 điểm</p>
+                </div>
+            </div>
+
+            <!-- CANDIDATE INFO BOX -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100 mt-4 print:bg-transparent print:border-none print:p-0 print:grid-cols-2">
+                <div class="flex items-center gap-2">
+                    <span class="text-sm font-bold text-slate-700 whitespace-nowrap">Họ và tên:</span>
+                    <input type="text" class="w-full bg-transparent border-b border-slate-300 focus:border-mixue-red focus:outline-none text-sm px-1 py-0.5 font-semibold text-slate-800">
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-sm font-bold text-slate-700 whitespace-nowrap">Cửa hàng:</span>
+                    <input type="text" class="w-full bg-transparent border-b border-slate-300 focus:border-mixue-red focus:outline-none text-sm px-1 py-0.5 font-semibold text-slate-800">
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-sm font-bold text-slate-700 whitespace-nowrap">Ngày thi:</span>
+                    <input type="text" class="w-full bg-transparent border-b border-slate-300 focus:border-mixue-red focus:outline-none text-sm px-1 py-0.5 font-semibold text-slate-800 text-center">
+                </div>
+                <!-- Score box for prints -->
+                <div class="border-l border-slate-200 pl-4 flex items-center justify-between print:border-l-0 print:pl-0">
+                    <span class="text-sm font-bold text-slate-700">Điểm số:</span>
+                    <div class="w-16 h-10 border-2 border-dashed border-slate-300 rounded-lg flex items-center justify-center font-bold text-lg text-mixue-red bg-white">
+                        /100
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 1: CÔNG THỨC PHA CHẾ -->
+        <section class="mb-10 page-break">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2 mb-6">
+                <h3 class="text-lg font-extrabold text-slate-900 uppercase flex items-center gap-2">
+                    <span class="bg-mixue-red text-white text-xs px-2.5 py-1 rounded">Phần 1</span>
+                    Công thức pha chế <span class="text-sm text-slate-500 font-normal lowercase">(35 điểm)</span>
+                </h3>
+            </div>
+            
+            <div class="bg-red-50 border-l-4 border-mixue-red p-4 rounded-r-xl mb-6 text-sm text-red-900 leading-relaxed no-print">
+                <strong>Yêu cầu chấm điểm:</strong> Nêu đúng theo trình tự pha chế; định lượng các thành phần, khối lượng nguyên vật liệu, loại cốc sử dụng, giá bán niêm yết và phục vụ kèm theo. Ghi rõ định lượng thay đổi đối với mức yêu cầu ít đường, ít đá. Mỗi câu trả lời đúng hoàn toàn đạt <strong>1.0 điểm</strong>.
+            </div>
+
+            <!-- RECIPES GRID (Renders all 23 recipes directly) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="recipes-container">
+                <!-- Filled dynamically by JavaScript below -->
+            </div>
+
+            <!-- QUESTION 24: ERROR TOLERANCES -->
+            <div class="mt-8 bg-slate-50 p-5 rounded-xl border border-slate-200 page-break">
+                <h4 class="font-bold text-slate-900 mb-3 flex items-center justify-between">
+                    <span>24. Khối lượng sai số cho phép của các nguyên vật liệu sau:</span>
+                    <span class="text-xs bg-mixue-red text-white px-2 py-0.5 rounded">2.0 điểm</span>
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 text-sm">
+                    <div class="bg-white p-3 rounded-lg border border-slate-200">
+                        <label class="block font-semibold text-slate-700 text-xs uppercase mb-1">A. 25g lô hội</label>
+                        <input type="text" class="w-full bg-slate-50 p-1.5 border border-slate-200 rounded text-sm focus:outline-none focus:ring-1 focus:ring-mixue-red">
+                    </div>
+                    <div class="bg-white p-3 rounded-lg border border-slate-200">
+                        <label class="block font-semibold text-slate-700 text-xs uppercase mb-1">B. 80g trân châu</label>
+                        <input type="text" class="w-full bg-slate-50 p-1.5 border border-slate-200 rounded text-sm focus:outline-none focus:ring-1 focus:ring-mixue-red">
+                    </div>
+                    <div class="bg-white p-3 rounded-lg border border-slate-200">
+                        <label class="block font-semibold text-slate-700 text-xs uppercase mb-1">C. 55g đường quả</label>
+                        <input type="text" class="w-full bg-slate-50 p-1.5 border border-slate-200 rounded text-sm focus:outline-none focus:ring-1 focus:ring-mixue-red">
+                    </div>
+                    <div class="bg-white p-3 rounded-lg border border-slate-200">
+                        <label class="block font-semibold text-slate-700 text-xs uppercase mb-1">D. 40g chanh</label>
+                        <input type="text" class="w-full bg-slate-50 p-1.5 border border-slate-200 rounded text-sm focus:outline-none focus:ring-1 focus:ring-mixue-red">
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUESTION 25: STANDARD WEIGHTS TABLE -->
+            <div class="mt-8 page-break">
+                <h4 class="font-bold text-slate-900 mb-3 flex items-center justify-between">
+                    <span>25. Nêu khối lượng tiêu chuẩn & dụng cụ đo cho các loại nguyên liệu dưới đây:</span>
+                    <span class="text-xs bg-mixue-red text-white px-2 py-0.5 rounded">3.0 điểm</span>
+                </h4>
+                <div class="overflow-x-auto border border-slate-200 rounded-xl">
+                    <table class="w-full text-sm text-left">
+                        <thead class="bg-slate-100 text-slate-700 text-xs uppercase font-bold">
+                            <tr>
+                                <th class="p-3 border-b">Loại nguyên liệu</th>
+                                <th class="p-3 border-b">Dụng cụ sử dụng</th>
+                                <th class="p-3 border-b">Khối lượng tiêu chuẩn</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200">
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-700 bg-slate-50/50">Bột trà sữa</td>
+                                <td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 focus:outline-none focus:border-mixue-red text-sm py-0.5"></td>
+                                <td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 focus:outline-none focus:border-mixue-red text-sm py-0.5"></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-700 bg-slate-50/50">Vụn Oreo</td>
+                                <td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 focus:outline-none focus:border-mixue-red text-sm py-0.5"></td>
+                                <td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 focus:outline-none focus:border-mixue-red text-sm py-0.5"></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-700 bg-slate-50/50">Xoài đông lạnh</td>
+                                <td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 focus:outline-none focus:border-mixue-red text-sm py-0.5"></td>
+                                <td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 focus:outline-none focus:border-mixue-red text-sm py-0.5"></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-700 bg-slate-50/50">Dâu tây đông lạnh</td>
+                                <td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 focus:outline-none focus:border-mixue-red text-sm py-0.5"></td>
+                                <td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 focus:outline-none focus:border-mixue-red text-sm py-0.5"></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-700 bg-slate-50/50">Ngọc trai</td>
+                                <td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 focus:outline-none focus:border-mixue-red text-sm py-0.5"></td>
+                                <td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 focus:outline-none focus:border-mixue-red text-sm py-0.5"></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-700 bg-slate-50/50">Vụn ốc quế</td>
+                                <td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 focus:outline-none focus:border-mixue-red text-sm py-0.5"></td>
+                                <td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 focus:outline-none focus:border-mixue-red text-sm py-0.5"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- QUESTION 26 & 27: SUGAR & ICE LEVELS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 page-break">
+                <!-- Question 26 -->
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-3 flex items-center justify-between">
+                        <span>26. Định lượng đường (Ít đường):</span>
+                        <span class="text-xs bg-mixue-red text-white px-2 py-0.5 rounded">2.0 điểm</span>
+                    </h4>
+                    <div class="border border-slate-200 rounded-xl overflow-hidden">
+                        <table class="w-full text-sm text-left">
+                            <thead class="bg-slate-100 font-bold text-xs uppercase text-slate-700">
+                                <tr>
+                                    <th class="p-3 border-b">Đường bình thường</th>
+                                    <th class="p-3 border-b">Ít đường (70%)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr><td class="p-3 bg-slate-50 font-semibold">10g</td><td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-sm focus:outline-none"></td></tr>
+                                <tr><td class="p-3 bg-slate-50 font-semibold">30g</td><td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-sm focus:outline-none"></td></tr>
+                                <tr><td class="p-3 bg-slate-50 font-semibold">55g</td><td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-sm focus:outline-none"></td></tr>
+                                <tr><td class="p-3 bg-slate-50 font-semibold">70g</td><td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-sm focus:outline-none"></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Question 27 -->
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-3 flex items-center justify-between">
+                        <span>27. Định lượng đá (Ít đá):</span>
+                        <span class="text-xs bg-mixue-red text-white px-2 py-0.5 rounded">3.0 điểm</span>
+                    </h4>
+                    <div class="border border-slate-200 rounded-xl overflow-hidden">
+                        <table class="w-full text-sm text-left">
+                            <thead class="bg-slate-100 font-bold text-xs uppercase text-slate-700">
+                                <tr>
+                                    <th class="p-3 border-b">Loại cốc</th>
+                                    <th class="p-3 border-b">Đá bình thường</th>
+                                    <th class="p-3 border-b">Ít đá</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr>
+                                    <td class="p-3 bg-slate-50 font-medium">Dòng cà phê kem</td>
+                                    <td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-sm focus:outline-none"></td>
+                                    <td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-sm focus:outline-none"></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 bg-slate-50 font-medium">Cốc 700ml</td>
+                                    <td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-sm focus:outline-none"></td>
+                                    <td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-sm focus:outline-none"></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 bg-slate-50 font-medium">Cốc 500ml</td>
+                                    <td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-sm focus:outline-none"></td>
+                                    <td class="p-3"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-sm focus:outline-none"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUESTION 28: TRUE/FALSE -->
+            <div class="mt-8 page-break">
+                <h4 class="font-bold text-slate-900 mb-3 flex items-center justify-between">
+                    <span>28. Chọn Đúng / Sai đối với các khẳng định dưới đây:</span>
+                    <span class="text-xs bg-mixue-red text-white px-2 py-0.5 rounded">2.0 điểm</span>
+                </h4>
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <table class="w-full text-sm text-left">
+                        <thead class="bg-slate-100 font-bold text-xs uppercase text-slate-700">
+                            <tr>
+                                <th class="p-3 border-b w-8/12">Khẳng định</th>
+                                <th class="p-3 border-b text-center w-2/12">Đúng</th>
+                                <th class="p-3 border-b text-center w-2/12">Sai</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200">
+                            <tr>
+                                <td class="p-3 text-slate-700">1. Sản phẩm chỉ có thêm tối đa 2 phần topping đi kèm.</td>
+                                <td class="p-3 text-center">
+                                    <input type="radio" name="tf_1" class="w-4 h-4 text-mixue-red focus:ring-mixue-red">
+                                </td>
+                                <td class="p-3 text-center">
+                                    <input type="radio" name="tf_1" class="w-4 h-4 text-mixue-red focus:ring-mixue-red">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-slate-700">2. Trà sữa trân châu đường đen có thể chủ động yêu cầu giảm đường.</td>
+                                <td class="p-3 text-center">
+                                    <input type="radio" name="tf_2" class="w-4 h-4 text-mixue-red focus:ring-mixue-red">
+                                </td>
+                                <td class="p-3 text-center">
+                                    <input type="radio" name="tf_2" class="w-4 h-4 text-mixue-red focus:ring-mixue-red">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-slate-700">3. Dòng cà phê không thể điều chỉnh nhiệt độ & độ ngọt theo yêu cầu của khách hàng.</td>
+                                <td class="p-3 text-center">
+                                    <input type="radio" name="tf_3" class="w-4 h-4 text-mixue-red focus:ring-mixue-red">
+                                </td>
+                                <td class="p-3 text-center">
+                                    <input type="radio" name="tf_3" class="w-4 h-4 text-mixue-red focus:ring-mixue-red">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-slate-700">4. Vụn ốc quế và vụn Oreo bắt buộc phải được bảo quản liên tục trong tủ lạnh tủ mát.</td>
+                                <td class="p-3 text-center">
+                                    <input type="radio" name="tf_4" class="w-4 h-4 text-mixue-red focus:ring-mixue-red">
+                                </td>
+                                <td class="p-3 text-center">
+                                    <input type="radio" name="tf_4" class="w-4 h-4 text-mixue-red focus:ring-mixue-red">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: CÔNG THỨC SÂN SAU -->
+        <section class="mb-10 page-break">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2 mb-6">
+                <h3 class="text-lg font-extrabold text-slate-900 uppercase flex items-center gap-2">
+                    <span class="bg-mixue-red text-white text-xs px-2.5 py-1 rounded">Phần 2</span>
+                    Công thức khu vực sơ chế (Sân Sau) <span class="text-sm text-slate-500 font-normal lowercase">(10 điểm)</span>
+                </h3>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Prep 1 -->
+                <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/50">
+                    <h4 class="font-bold text-slate-900 flex justify-between items-center mb-3">
+                        <span>1. Công thức và trình tự pha 01 phần Kem Khoai Môn</span>
+                        <span class="text-xs bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-semibold">2.0 điểm</span>
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Quy trình pha chế & Sơ chế:</span>
+                            <textarea rows="3" class="w-full mt-1 p-2 bg-white border border-slate-200 rounded-lg text-xs focus:ring-1 focus:ring-mixue-red focus:outline-none"></textarea>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Điều kiện & Thời gian bảo quản tiêu chuẩn:</span>
+                            <textarea rows="3" class="w-full mt-1 p-2 bg-white border border-slate-200 rounded-lg text-xs focus:ring-1 focus:ring-mixue-red focus:outline-none"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prep 2 -->
+                <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/50">
+                    <h4 class="font-bold text-slate-900 flex justify-between items-center mb-3">
+                        <span>2. Quy trình nấu và pha chế 01 phần Sữa Đặc chuẩn</span>
+                        <span class="text-xs bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-semibold">2.0 điểm</span>
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Quy trình pha chế & Sơ chế:</span>
+                            <textarea rows="3" class="w-full mt-1 p-2 bg-white border border-slate-200 rounded-lg text-xs focus:ring-1 focus:ring-mixue-red focus:outline-none"></textarea>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Điều kiện & Thời gian bảo quản tiêu chuẩn:</span>
+                            <textarea rows="3" class="w-full mt-1 p-2 bg-white border border-slate-200 rounded-lg text-xs focus:ring-1 focus:ring-mixue-red focus:outline-none"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prep 3 -->
+                <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/50">
+                    <h4 class="font-bold text-slate-900 flex justify-between items-center mb-3">
+                        <span>3. Công thức và quy trình nấu 02 phần Thạch Pudding Caramel</span>
+                        <span class="text-xs bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-semibold">2.0 điểm</span>
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Quy trình pha chế & Sơ chế:</span>
+                            <textarea rows="3" class="w-full mt-1 p-2 bg-white border border-slate-200 rounded-lg text-xs focus:ring-1 focus:ring-mixue-red focus:outline-none"></textarea>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Điều kiện & Thời gian bảo quản tiêu chuẩn:</span>
+                            <textarea rows="3" class="w-full mt-1 p-2 bg-white border border-slate-200 rounded-lg text-xs focus:ring-1 focus:ring-mixue-red focus:outline-none"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prep 4 -->
+                <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/50">
+                    <h4 class="font-bold text-slate-900 flex justify-between items-center mb-3">
+                        <span>4. Quy trình luộc và pha 02 phần Ngọc Trai dẻo dai</span>
+                        <span class="text-xs bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-semibold">2.0 điểm</span>
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Quy trình pha chế & Sơ chế:</span>
+                            <textarea rows="3" class="w-full mt-1 p-2 bg-white border border-slate-200 rounded-lg text-xs focus:ring-1 focus:ring-mixue-red focus:outline-none"></textarea>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Điều kiện & Thời gian bảo quản tiêu chuẩn:</span>
+                            <textarea rows="3" class="w-full mt-1 p-2 bg-white border border-slate-200 rounded-lg text-xs focus:ring-1 focus:ring-mixue-red focus:outline-none"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prep 5 -->
+                <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/50">
+                    <h4 class="font-bold text-slate-900 flex justify-between items-center mb-3">
+                        <span>5. Công thức chuẩn bị 01 phần Thạch Đường Đen đậm vị</span>
+                        <span class="text-xs bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-semibold">2.0 điểm</span>
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Quy trình pha chế & Sơ chế:</span>
+                            <textarea rows="3" class="w-full mt-1 p-2 bg-white border border-slate-200 rounded-lg text-xs focus:ring-1 focus:ring-mixue-red focus:outline-none"></textarea>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Điều kiện & Thời gian bảo quản tiêu chuẩn:</span>
+                            <textarea rows="3" class="w-full mt-1 p-2 bg-white border border-slate-200 rounded-lg text-xs focus:ring-1 focus:ring-mixue-red focus:outline-none"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: BẢO DƯỠNG MÁY MÓC -->
+        <section class="mb-10 page-break">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2 mb-6">
+                <h3 class="text-lg font-extrabold text-slate-900 uppercase flex items-center gap-2">
+                    <span class="bg-mixue-red text-white text-xs px-2.5 py-1 rounded">Phần 3</span>
+                    Vận hành & Bảo dưỡng máy móc <span class="text-sm text-slate-500 font-normal lowercase">(35 điểm)</span>
+                </h3>
+            </div>
+
+            <!-- Essay tasks on machines -->
+            <div class="space-y-6">
+                <!-- Task 1 -->
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-2 flex justify-between">
+                        <span>1. Nêu quy trình vệ sinh & set-up máy kem buổi tối:</span>
+                        <span class="text-xs bg-slate-100 px-2 py-0.5 rounded text-slate-600 font-semibold">10 điểm</span>
+                    </h4>
+                    <textarea rows="5" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-mixue-red focus:outline-none"></textarea>
+                </div>
+
+                <!-- Task 2 -->
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-2 flex justify-between">
+                        <span>2. Nêu chi tiết quy trình tẩy cặn canxi máy nước nóng định kỳ:</span>
+                        <span class="text-xs bg-slate-100 px-2 py-0.5 rounded text-slate-600 font-semibold">10 điểm</span>
+                    </h4>
+                    <textarea rows="4" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-mixue-red focus:outline-none"></textarea>
+                </div>
+
+                <!-- Task 3 -->
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-2 flex justify-between">
+                        <span>3. Quy trình rửa máy định lượng đường định kỳ:</span>
+                        <span class="text-xs bg-slate-100 px-2 py-0.5 rounded text-slate-600 font-semibold">5.0 điểm</span>
+                    </h4>
+                    <textarea rows="4" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-mixue-red focus:outline-none"></textarea>
+                </div>
+
+                <!-- Task 4: Short questions -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 mt-6 page-break">
+                    <h4 class="font-bold text-slate-900 mb-4 flex items-center justify-between">
+                        <span>4. Điền từ/cụm từ thích hợp vào chỗ trống:</span>
+                        <span class="text-xs bg-mixue-red text-white px-2 py-0.5 rounded">5.0 điểm</span>
+                    </h4>
+                    <div class="space-y-4 text-sm leading-loose">
+                        <div>
+                            <strong>A.</strong> Thời hạn cần thay mới định kỳ của các lõi lọc thô và lõi tinh trong hệ thống lọc nước (lõi 1, 2, 3) là: 
+                            <input type="text" class="bg-transparent border-b border-slate-400 focus:outline-none focus:border-mixue-red px-2 text-center w-48">.
+                        </div>
+                        <div>
+                            <strong>B.</strong> Khi máy dập cốc hiện lỗi màn hình hiển thị <strong>E52</strong>, nguyên nhân chủ yếu là do: 
+                            <input type="text" class="bg-transparent border-b border-slate-400 focus:outline-none focus:border-mixue-red px-2 text-center w-64">.
+                        </div>
+                        <div>
+                            <strong>C.</strong> Cách xử lý lỗi màng dập cốc không dính chặt hoặc bị lệch mép: 
+                            <input type="text" class="bg-transparent border-b border-slate-400 focus:outline-none focus:border-mixue-red px-2 text-center w-full mt-1">.
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                            <div>
+                                <strong>D.</strong> Máy đá cần vệ sinh định kỳ <input type="text" class="bg-transparent border-b border-slate-400 focus:outline-none focus:border-mixue-red px-2 text-center w-16"> lần/tháng, tẩy cặn <input type="text" class="bg-transparent border-b border-slate-400 focus:outline-none focus:border-mixue-red px-2 text-center w-16"> lần/tháng.
+                            </div>
+                            <div>
+                                <strong>E.</strong> Thời hạn thực hiện tổng vệ sinh tủ đông, tủ mát bảo quản là: <input type="text" class="bg-transparent border-b border-slate-400 focus:outline-none focus:border-mixue-red px-2 text-center w-36">.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Task 5: Machine Error Code Table -->
+                <div class="page-break">
+                    <h4 class="font-bold text-slate-900 mb-3 flex items-center justify-between">
+                        <span>5. Đối chiếu mã sự cố hiển thị của máy làm kem với nguyên nhân & cách khắc phục:</span>
+                        <span class="text-xs bg-mixue-red text-white px-2 py-0.5 rounded">5.0 điểm</span>
+                    </h4>
+                    <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                        <table class="w-full text-sm text-left">
+                            <thead class="bg-slate-100 font-bold text-xs uppercase text-slate-700">
+                                <tr>
+                                    <th class="p-3 border-b text-center w-2/12">Mã hiển thị</th>
+                                    <th class="p-3 border-b w-5/12">Nguyên nhân thực tế</th>
+                                    <th class="p-3 border-b w-5/12">Cách khắc phục chính xác</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr>
+                                    <td class="p-3 text-center font-bold text-red-600 bg-red-50/50">" - - "</td>
+                                    <td class="p-2"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-xs focus:outline-none focus:border-mixue-red py-1"></td>
+                                    <td class="p-2"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-xs focus:outline-none focus:border-mixue-red py-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 text-center font-bold text-red-600 bg-red-50/50">UH</td>
+                                    <td class="p-2"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-xs focus:outline-none focus:border-mixue-red py-1"></td>
+                                    <td class="p-2"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-xs focus:outline-none focus:border-mixue-red py-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 text-center font-bold text-red-600 bg-red-50/50">CL</td>
+                                    <td class="p-2"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-xs focus:outline-none focus:border-mixue-red py-1"></td>
+                                    <td class="p-2"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-xs focus:outline-none focus:border-mixue-red py-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 text-center font-bold text-red-600 bg-red-50/50">NL</td>
+                                    <td class="p-2"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-xs focus:outline-none focus:border-mixue-red py-1"></td>
+                                    <td class="p-2"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-xs focus:outline-none focus:border-mixue-red py-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 text-center font-bold text-red-600 bg-red-50/50">Cb</td>
+                                    <td class="p-2"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-xs focus:outline-none focus:border-mixue-red py-1"></td>
+                                    <td class="p-2"><input type="text" class="w-full bg-transparent border-b border-slate-200 text-xs focus:outline-none focus:border-mixue-red py-1"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: TIÊU CHUẨN VẬN HÀNH -->
+        <section class="mb-10 page-break">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2 mb-6">
+                <h3 class="text-lg font-extrabold text-slate-900 uppercase flex items-center gap-2">
+                    <span class="bg-mixue-red text-white text-xs px-2.5 py-1 rounded">Phần 4</span>
+                    Tiêu chuẩn vận hành cửa hàng <span class="text-sm text-slate-500 font-normal lowercase">(20 điểm)</span>
+                </h3>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Task 1 -->
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-2 flex justify-between">
+                        <span>1. Trình bày Quy trình 3 bước thanh toán và trả đồ cho khách hàng tại quầy:</span>
+                        <span class="text-xs bg-slate-100 px-2 py-0.5 rounded text-slate-600 font-semibold">5.0 điểm</span>
+                    </h4>
+                    <textarea rows="3" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-mixue-red focus:outline-none"></textarea>
+                </div>
+
+                <!-- Task 2 & 3 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2 flex justify-between">
+                            <span>2. Bốn Ý Thức & Năm Thống Nhất của hệ thống Mixue:</span>
+                            <span class="text-xs bg-slate-100 px-2 py-0.5 rounded text-slate-600 font-semibold">2.0 điểm</span>
+                        </h4>
+                        <textarea rows="3" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-mixue-red focus:outline-none"></textarea>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2 flex justify-between">
+                            <span>3. Trình bày quy trình bàn giao ca làm việc:</span>
+                            <span class="text-xs bg-slate-100 px-2 py-0.5 rounded text-slate-600 font-semibold">3.0 điểm</span>
+                        </h4>
+                        <textarea rows="3" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-mixue-red focus:outline-none"></textarea>
+                    </div>
+                </div>
+
+                <!-- Task 4: Towel standard -->
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-3 flex items-center justify-between">
+                        <span>4. Quy tắc chuẩn hóa sử dụng các loại màu khăn tại khu vực làm việc:</span>
+                        <span class="text-xs bg-mixue-red text-white px-2 py-0.5 rounded">5.0 điểm</span>
+                    </h4>
+                    <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+                        <div class="bg-blue-50 border border-blue-200 p-3 rounded-xl flex flex-col justify-between">
+                            <span class="text-xs font-bold text-blue-700 uppercase flex items-center gap-1.5">
+                                <span class="w-2.5 h-2.5 bg-blue-500 rounded-full border border-blue-300"></span>
+                                <span>Khăn Xanh Dương</span>
+                            </span>
+                            <input type="text" class="w-full mt-2 bg-white border border-slate-200 p-1 rounded text-xs text-center focus:outline-none">
+                        </div>
+                        <div class="bg-emerald-50 border border-emerald-200 p-3 rounded-xl flex flex-col justify-between">
+                            <span class="text-xs font-bold text-emerald-700 uppercase flex items-center gap-1.5">
+                                <span class="w-2.5 h-2.5 bg-emerald-500 rounded-full border border-emerald-300"></span>
+                                <span>Khăn Xanh Lá</span>
+                            </span>
+                            <input type="text" class="w-full mt-2 bg-white border border-slate-200 p-1 rounded text-xs text-center focus:outline-none">
+                        </div>
+                        <div class="bg-pink-50 border border-pink-200 p-3 rounded-xl flex flex-col justify-between">
+                            <span class="text-xs font-bold text-pink-700 uppercase flex items-center gap-1.5">
+                                <span class="w-2.5 h-2.5 bg-pink-500 rounded-full border border-pink-300"></span>
+                                <span>Khăn Màu Hồng</span>
+                            </span>
+                            <input type="text" class="w-full mt-2 bg-white border border-slate-200 p-1 rounded text-xs text-center focus:outline-none">
+                        </div>
+                        <div class="bg-amber-50 border border-amber-200 p-3 rounded-xl flex flex-col justify-between">
+                            <span class="text-xs font-bold text-amber-700 uppercase flex items-center gap-1.5">
+                                <span class="w-2.5 h-2.5 bg-amber-500 rounded-full border border-amber-300"></span>
+                                <span>Khăn Màu Vàng</span>
+                            </span>
+                            <input type="text" class="w-full mt-2 bg-white border border-slate-200 p-1 rounded text-xs text-center focus:outline-none">
+                        </div>
+                        <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl flex flex-col justify-between">
+                            <span class="text-xs font-bold text-slate-700 uppercase flex items-center gap-1.5">
+                                <span class="w-2.5 h-2.5 bg-slate-500 rounded-full border border-slate-300"></span>
+                                <span>Khăn Màu Khác</span>
+                            </span>
+                            <input type="text" class="w-full mt-2 bg-white border border-slate-200 p-1 rounded text-xs text-center focus:outline-none">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Task 5: Packaging identification with local images -->
+                <div class="page-break">
+                    <h4 class="font-bold text-slate-900 mb-3 flex items-center justify-between">
+                        <span>5. Điền trọng lượng quy đổi & quy cách đóng gói của các NVL sau:</span>
+                        <span class="text-xs bg-mixue-red text-white px-2 py-0.5 rounded">5.0 điểm</span>
+                    </h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Image Box 1 -->
+                        <div class="flex gap-4 border border-slate-200 p-3 rounded-xl items-center bg-slate-50/30">
+                            <img src="tapioca_pearls.jpg" alt="Tapioca Pearls" class="w-24 h-24 object-cover border border-slate-200 rounded-lg bg-white" onerror="this.src='https://placehold.co/100x100?text=Tapioca+Pearls'">
+                            <div class="flex-grow space-y-1.5 text-xs">
+                                <h5 class="font-bold text-slate-900 text-sm">Trân Châu Đen (Tapioca Pearls)</h5>
+                                <div>
+                                    <span class="text-slate-500">1 thùng =</span>
+                                    <input type="text" class="bg-transparent border-b border-slate-300 w-16 px-1 text-center font-semibold focus:outline-none"> gr
+                                </div>
+                                <div>
+                                    <span class="text-slate-500">1 gói/lon =</span>
+                                    <input type="text" class="bg-transparent border-b border-slate-300 w-16 px-1 text-center font-semibold focus:outline-none"> gr
+                                </div>
+                                <div>
+                                    <span class="text-slate-500">1 thùng =</span>
+                                    <input type="text" class="bg-transparent border-b border-slate-300 w-16 px-1 text-center font-semibold focus:outline-none"> gói/lon
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Box 2 -->
+                        <div class="flex gap-4 border border-slate-200 p-3 rounded-xl items-center bg-slate-50/30">
+                            <img src="paper_tray.jpg" alt="Paper Tray" class="w-24 h-24 object-cover border border-slate-200 rounded-lg bg-white" onerror="this.src='https://placehold.co/100x100?text=Paper+Tray'">
+                            <div class="flex-grow space-y-1.5 text-xs">
+                                <h5 class="font-bold text-slate-900 text-sm">Vỏ Giấy Ốc Quế (Paper Tray)</h5>
+                                <div>
+                                    <span class="text-slate-500">1 thùng =</span>
+                                    <input type="text" class="bg-transparent border-b border-slate-300 w-16 px-1 text-center font-semibold focus:outline-none"> gr
+                                </div>
+                                <div>
+                                    <span class="text-slate-500">1 gói/lon =</span>
+                                    <input type="text" class="bg-transparent border-b border-slate-300 w-16 px-1 text-center font-semibold focus:outline-none"> gr
+                                </div>
+                                <div>
+                                    <span class="text-slate-500">1 thùng =</span>
+                                    <input type="text" class="bg-transparent border-b border-slate-300 w-16 px-1 text-center font-semibold focus:outline-none"> gói/lon
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Box 3 -->
+                        <div class="flex gap-4 border border-slate-200 p-3 rounded-xl items-center bg-slate-50/30">
+                            <img src="creamer_sweet.jpg" alt="Non-Dairy Creamer (Sweet)" class="w-24 h-24 object-cover border border-slate-200 rounded-lg bg-white" onerror="this.src='https://placehold.co/100x100?text=Non-Dairy+Creamer+Sweet'">
+                            <div class="flex-grow space-y-1.5 text-xs">
+                                <h5 class="font-bold text-slate-900 text-sm">Bột Kem Không Sữa (Sweet)</h5>
+                                <div>
+                                    <span class="text-slate-500">1 thùng =</span>
+                                    <input type="text" class="bg-transparent border-b border-slate-300 w-16 px-1 text-center font-semibold focus:outline-none"> gr
+                                </div>
+                                <div>
+                                    <span class="text-slate-500">1 gói/lon =</span>
+                                    <input type="text" class="bg-transparent border-b border-slate-300 w-16 px-1 text-center font-semibold focus:outline-none"> gr
+                                </div>
+                                <div>
+                                    <span class="text-slate-500">1 thùng =</span>
+                                    <input type="text" class="bg-transparent border-b border-slate-300 w-16 px-1 text-center font-semibold focus:outline-none"> gói/lon
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Box 4 -->
+                        <div class="flex gap-4 border border-slate-200 p-3 rounded-xl items-center bg-slate-50/30">
+                            <img src="black_tea.jpg" alt="Black Tea" class="w-24 h-24 object-cover border border-slate-200 rounded-lg bg-white" onerror="this.src='https://placehold.co/100x100?text=Black+Tea'">
+                            <div class="flex-grow space-y-1.5 text-xs">
+                                <h5 class="font-bold text-slate-900 text-sm">Hồng Trà Nguyên Lá (Black Tea)</h5>
+                                <div>
+                                    <span class="text-slate-500">1 thùng =</span>
+                                    <input type="text" class="bg-transparent border-b border-slate-300 w-16 px-1 text-center font-semibold focus:outline-none"> gr
+                                </div>
+                                <div>
+                                    <span class="text-slate-500">1 gói/lon =</span>
+                                    <input type="text" class="bg-transparent border-b border-slate-300 w-16 px-1 text-center font-semibold focus:outline-none"> gr
+                                </div>
+                                <div>
+                                    <span class="text-slate-500">1 thùng =</span>
+                                    <input type="text" class="bg-transparent border-b border-slate-300 w-16 px-1 text-center font-semibold focus:outline-none"> gói/lon
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Box 5 -->
+                        <div class="flex gap-4 border border-slate-200 p-3 rounded-xl items-center bg-slate-50/30 col-span-1 md:col-span-2">
+                            <img src="non_dairy_creamer.jpg" alt="Non-Dairy Creamer" class="w-24 h-24 object-cover border border-slate-200 rounded-lg bg-white" onerror="this.src='https://placehold.co/100x100?text=Non-Dairy+Creamer'">
+                            <div class="flex-grow space-y-1.5 text-xs">
+                                <h5 class="font-bold text-slate-900 text-sm">Bột Sữa Khác (Non-Dairy Creamer)</h5>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                                    <div>
+                                        <span class="text-slate-500">1 thùng =</span>
+                                        <input type="text" class="bg-transparent border-b border-slate-300 w-16 px-1 text-center font-semibold focus:outline-none"> gr
+                                    </div>
+                                    <div>
+                                        <span class="text-slate-500">1 gói/lon =</span>
+                                        <input type="text" class="bg-transparent border-b border-slate-300 w-16 px-1 text-center font-semibold focus:outline-none"> gr
+                                    </div>
+                                    <div>
+                                        <span class="text-slate-500">1 thùng =</span>
+                                        <input type="text" class="bg-transparent border-b border-slate-300 w-16 px-1 text-center font-semibold focus:outline-none"> gói/lon
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRINT FOOTER EXAMINER BOX -->
+        <div class="hidden print:grid grid-cols-2 text-center text-sm font-bold mt-12 pt-8 border-t border-slate-300">
+            <div>
+                <p class="text-slate-500 mb-16">CHỮ KÝ CỦA THÍ SINH</p>
+                <p class="text-slate-300 text-xs">(Ký và ghi rõ họ tên)</p>
+            </div>
+            <div>
+                <p class="text-slate-500 mb-16">GIÁM KHẢO CHẤM THI</p>
+                <p class="text-slate-300 text-xs">(Ký và duyệt điểm số)</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER COPYRIGHT (NO-PRINT) -->
+    <footer class="no-print bg-slate-900 text-slate-400 py-6 text-center text-xs border-t border-slate-850 mt-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="font-semibold text-slate-300">Bản quyền biểu mẫu thuộc BỘ PHẬN BP-QC & Nhượng Quyền Mixue Việt Nam © 2026</p>
+            <p class="mt-1 text-slate-500">Mọi hành vi sao chép trái phép không qua kiểm duyệt sẽ bị xử lý theo chính sách bảo mật nhượng quyền.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPT -->
+    <script>
+        const recipesList = [
+            { id: 1, name: "Trà xanh chanh thêm thạch dừa" },
+            { id: 2, name: "Trà chanh lô hội thêm thạch dừa" },
+            { id: 3, name: "Super Sundae Xoài" },
+            { id: 4, name: "Trà xoài chanh leo" },
+            { id: 5, name: "Trà Sữa Bá Vương" },
+            { id: 6, name: "Trà sữa 2J sz L + Topping 2 phần trân châu đen" },
+            { id: 7, name: "Nước chanh tươi lạnh thêm 2 thạch đào" },
+            { id: 8, name: "Americano nho" },
+            { id: 9, name: "Trà sữa ngọc trai thêm 2 phần trân châu" },
+            { id: 10, name: "Trà đào Big Size ít đường" },
+            { id: 11, name: "Chanh leo Bách Hương" },
+            { id: 12, name: "Cafe Latte Caramel kem Tươi" },
+            { id: 13, name: "Nước chanh tươi lạnh thêm thạch dừa, lô hội" },
+            { id: 14, name: "Dương chi cam lộ" },
+            { id: 15, name: "Khi nho gặp chanh" },
+            { id: 16, name: "Trà chanh dâu tây" },
+            { id: 17, name: "Trà sữa hoa nhài ít đường" },
+            { id: 18, name: "Super Sundae O-coco thêm vụn oreo" },
+            { id: 19, name: "Sữa thạch đào dâu" },
+            { id: 20, name: "Sữa tươi trân châu khoai môn thêm 2 phần pudding caramel" },
+            { id: 21, name: "Trà nho ăng nhăng nhăng" },
+            { id: 22, name: "Super Sundae đào vàng" },
+            { id: 23, name: "Đào hoa pop pop" }
+        ];
+
+        window.onload = function() {
+            const container = document.getElementById('recipes-container');
+            container.innerHTML = '';
+            recipesList.forEach(recipe => {
+                container.innerHTML += `
+                    <div class="border border-slate-200 p-4 rounded-xl shadow-sm hover:shadow-md transition bg-white break-inside-avoid">
+                        <h4 class="font-bold text-slate-950 border-b pb-2 mb-3 flex justify-between items-center">
+                            <span>${recipe.id}. ${recipe.name}</span>
+                            <span class="text-xs text-slate-400">1.0 điểm</span>
+                        </h4>
+                        <div class="space-y-3 text-sm">
+                            <div>
+                                <span class="text-xs font-bold text-slate-500 uppercase">Công thức & Trình tự pha chế:</span>
+                                <textarea rows="3" class="w-full mt-1 p-2 bg-slate-50 border border-slate-200 rounded-lg text-xs focus:ring-1 focus:ring-mixue-red focus:outline-none"></textarea>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2">
+                                <div>
+                                    <span class="text-[10px] font-bold text-slate-400 uppercase">Loại cốc</span>
+                                    <input type="text" class="w-full mt-0.5 p-1 bg-slate-50 border border-slate-200 rounded text-xs focus:outline-none">
+                                </div>
+                                <div>
+                                    <span class="text-[10px] font-bold text-slate-400 uppercase">Giá bán</span>
+                                    <input type="text" class="w-full mt-0.5 p-1 bg-slate-50 border border-slate-200 rounded text-xs focus:outline-none">
+                                </div>
+                                <div>
+                                    <span class="text-[10px] font-bold text-slate-400 uppercase">Phục vụ kèm</span>
+                                    <input type="text" class="w-full mt-0.5 p-1 bg-slate-50 border border-slate-200 rounded text-xs focus:outline-none">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        };
+    </script>
+</body>
+</html>

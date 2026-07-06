@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cổng Thi Nghiệp Vụ - Học Viện Mixue</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .mixue-red {
+            color: #ED1C24;
+        }
+        .bg-mixue-red {
+            background-color: #ED1C24;
+        }
+        .border-mixue-red {
+            border-color: #ED1C24;
+        }
+        .bg-mixue-gradient {
+            background: linear-gradient(135deg, #ED1C24 0%, #F15A24 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(237, 28, 36, 0.1), 0 8px 10px -6px rgba(237, 28, 36, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased">
+
+    <!-- HEADER BRANDING -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="input_file_6.png" alt="Mixue Logo" class="h-10 object-contain" onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6-tcVJYAeVX4_I-n2DX3w_uibmmpb9kYvynwEdVYfGCZuAC31RfFbrxM&s=10'">
+                <div>
+                    <h1 class="text-base font-extrabold text-slate-900 leading-tight">Học Viện Đào Tạo Mixue</h1>
+                    <p class="text-xs text-slate-500 font-bold tracking-wider">PORTAL KHẢO THÍ CHÍNH THỨC</p>
+                </div>
+            </div>
+            <div class="hidden sm:flex items-center gap-2 bg-red-50 text-mixue-red px-3 py-1.5 rounded-full text-xs font-bold border border-red-100">
+                <span class="w-2 h-2 bg-red-500 rounded-full animate-ping"></span>
+                Hệ Thống Trực Tuyến Đang Hoạt Động
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="bg-mixue-gradient text-white py-12 px-4 relative overflow-hidden">
+        <!-- Background snow decor elements -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <svg class="absolute top-4 left-10 w-12 h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M19 12h-2.17l1.59-1.59-1.41-1.41-3 3-1.02-1.02 2-2-1.41-1.41-2.58 2.58V6h2V4h-2V2h-2v2h-2v2h2v5.59l-2.58-2.58-1.41 1.41 2 2-1.02 1.02-3-3-1.41 1.41 1.59 1.59H5v2h2.17l-1.59 1.59 1.41 1.41 3-3 1.02 1.02-2 2 1.41 1.41 2.58-2.58V18h-2v2h2v2h2v-2h2v-2h-2v-5.59l2.58 2.58 1.41-1.41-2-2 1.02-1.02 3 3 1.41-1.41-1.59-1.59H19v-2z"/></svg>
+            <svg class="absolute bottom-6 right-20 w-16 h-16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 12h-2.17l1.59-1.59-1.41-1.41-3 3-1.02-1.02 2-2-1.41-1.41-2.58 2.58V6h2V4h-2V2h-2v2h-2v2h2v5.59l-2.58-2.58-1.41 1.41 2 2-1.02 1.02-3-3-1.41 1.41 1.59 1.59H5v2h2.17l-1.59 1.59 1.41 1.41 3-3 1.02 1.02-2 2 1.41 1.41 2.58-2.58V18h-2v2h2v2h2v-2h2v-2h-2v-5.59l2.58 2.58 1.41-1.41-2-2 1.02-1.02 3 3 1.41-1.41-1.59-1.59H19v-2z"/></svg>
+        </div>
+        
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-4">
+                🎓 Mixue Academy • Since 1997
+            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-4">
+                CỔNG THI NGHIỆP VỤ CỬA HÀNG
+            </h2>
+            <p class="text-base sm:text-lg text-red-100 max-w-2xl mx-auto font-medium">
+                Hệ thống chuẩn hóa năng lực vận hành dành cho Nhân viên bán thời gian (Part-time), Nhân viên chính thức và Cửa hàng trưởng.
+            </p>
+        </div>
+    </section>
+
+    <!-- MAIN DASHBOARD CONTENT -->
+    <main class="flex-grow max-w-6xl mx-auto w-full px-4 py-8">
+
+        <!-- CANDIDATE INFO SECTION -->
+        <section class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm mb-10 relative -mt-16 z-20">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="bg-red-50 p-2.5 rounded-xl text-mixue-red">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-slate-900 leading-tight">Thông Tin Thí Sinh Bắt Buộc</h3>
+                    <p class="text-xs text-slate-500 font-medium">Vui lòng hoàn thành đúng thông tin cá nhân trước khi ấn nút chọn đề thi</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Họ và tên thí sinh</label>
+                    <div class="relative">
+                        <input type="text" id="candidate_name" oninput="saveInputs()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-red-500 focus:bg-white transition" placeholder="Ví dụ: Nguyễn Văn A">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Cửa hàng làm việc</label>
+                    <div class="relative">
+                        <input type="text" id="candidate_store" oninput="saveInputs()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-red-500 focus:bg-white transition" placeholder="Ví dụ: Nhập mã CH">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Ngày thi hiện tại</label>
+                    <div class="relative">
+                        <input type="text" id="candidate_date" oninput="saveInputs()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-red-500 focus:bg-white transition text-center">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ASSESSMENTS GRID SECTION -->
+        <section class="mb-12">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-xl font-extrabold text-slate-900 flex items-center gap-2">
+                    <span class="w-2.5 h-6 bg-mixue-red rounded"></span>
+                    Danh Sách Đề Thi Nghiệp Vụ
+                </h3>
+                <span class="text-xs bg-slate-200 text-slate-700 px-3 py-1 rounded-full font-bold">Khả dụng: 3 Đề</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- DE KIEM TRA 1 CARD -->
+                <div class="bg-white border border-slate-200 hover:border-red-300 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between hover:shadow-lg group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-red-50 text-mixue-red text-[11px] font-bold px-2.5 py-1 rounded-lg border border-red-100">ĐỀ CHÍNH THỨC</span>
+                            <div class="flex items-center text-slate-400 gap-1 text-xs font-semibold">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                90 Phút
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 group-hover:text-mixue-red transition duration-200 mb-2 leading-snug">
+                            Đề Kiểm Tra Nghiệp Vụ (Mẫu 1)
+                        </h4>
+                        <p class="text-xs text-slate-500 font-medium mb-4">Mã lưu trữ: Dekiemtra(1).html</p>
+                        
+                        <div class="space-y-2 border-t border-slate-100 pt-4 mb-6">
+                            <div class="flex items-center gap-2 text-xs font-semibold text-slate-600">
+                                <span class="w-1.5 h-1.5 bg-mixue-red rounded-full"></span>
+                                23 Công thức trà, kem cơ bản
+                            </div>
+                            <div class="flex items-center gap-2 text-xs font-semibold text-slate-600">
+                                <span class="w-1.5 h-1.5 bg-mixue-red rounded-full"></span>
+                                Kiểm tra định lượng, đá, đường
+                            </div>
+                            <div class="flex items-center gap-2 text-xs font-semibold text-slate-600">
+                                <span class="w-1.5 h-1.5 bg-mixue-red rounded-full"></span>
+                                Quy trình sơ chế khu vực Sân Sau
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button onclick="startExam('Dekiemtra(1).html')" class="w-full bg-slate-900 text-white font-bold py-3 px-4 rounded-xl text-xs hover:bg-mixue-red transition-all duration-200 flex items-center justify-center gap-2 shadow-sm">
+                            Vào Thi Ngay
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- DE KIEM TRA 2 CARD -->
+                <div class="bg-white border border-slate-200 hover:border-red-300 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between hover:shadow-lg group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-red-50 text-mixue-red text-[11px] font-bold px-2.5 py-1 rounded-lg border border-red-100">ĐỀ CHÍNH THỨC</span>
+                            <div class="flex items-center text-slate-400 gap-1 text-xs font-semibold">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                90 Phút
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 group-hover:text-mixue-red transition duration-200 mb-2 leading-snug">
+                            Đề Kiểm Tra Nghiệp Vụ (Mẫu 2)
+                        </h4>
+                        <p class="text-xs text-slate-500 font-medium mb-4">Mã lưu trữ: Dekiemtra(2).html</p>
+                        
+                        <div class="space-y-2 border-t border-slate-100 pt-4 mb-6">
+                            <div class="flex items-center gap-2 text-xs font-semibold text-slate-600">
+                                <span class="w-1.5 h-1.5 bg-mixue-red rounded-full"></span>
+                                Vận hành & bảo dưỡng máy móc nâng cao
+                            </div>
+                            <div class="flex items-center gap-2 text-xs font-semibold text-slate-600">
+                                <span class="w-1.5 h-1.5 bg-mixue-red rounded-full"></span>
+                                Tiêu chuẩn vận hành, sử dụng khăn lau
+                            </div>
+                            <div class="flex items-center gap-2 text-xs font-semibold text-slate-600">
+                                <span class="w-1.5 h-1.5 bg-mixue-red rounded-full"></span>
+                                Trọng lượng quy đổi & đóng gói NVL
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button onclick="startExam('Dekiemtra(2).html')" class="w-full bg-slate-900 text-white font-bold py-3 px-4 rounded-xl text-xs hover:bg-mixue-red transition-all duration-200 flex items-center justify-center gap-2 shadow-sm">
+                            Vào Thi Ngay
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- KT PART-TIME CARD -->
+                <div class="bg-white border border-slate-200 hover:border-red-300 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between hover:shadow-lg group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-amber-50 text-amber-600 text-[11px] font-bold px-2.5 py-1 rounded-lg border border-amber-100">DÀNH CHO CTV</span>
+                            <div class="flex items-center text-slate-400 gap-1 text-xs font-semibold">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                45 Phút
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-900 group-hover:text-mixue-red transition duration-200 mb-2 leading-snug">
+                            Đề Đánh Giá Nhân Viên Part-Time
+                        </h4>
+                        <p class="text-xs text-slate-500 font-medium mb-4">Mã lưu trữ: KTpartime.html</p>
+                        
+                        <div class="space-y-2 border-t border-slate-100 pt-4 mb-6">
+                            <div class="flex items-center gap-2 text-xs font-semibold text-slate-600">
+                                <span class="w-1.5 h-1.5 bg-mixue-red rounded-full"></span>
+                                Vệ sinh ATTP & Quy chuẩn trang phục
+                            </div>
+                            <div class="flex items-center gap-2 text-xs font-semibold text-slate-600">
+                                <span class="w-1.5 h-1.5 bg-mixue-red rounded-full"></span>
+                                Giao tiếp khách hàng chuẩn 3 bước
+                            </div>
+                            <div class="flex items-center gap-2 text-xs font-semibold text-slate-600">
+                                <span class="w-1.5 h-1.5 bg-mixue-red rounded-full"></span>
+                                Quy tắc xử lý hóa đơn, nạp đá cơ bản
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button onclick="startExam('KTpartime.html')" class="w-full bg-slate-900 text-white font-bold py-3 px-4 rounded-xl text-xs hover:bg-mixue-red transition-all duration-200 flex items-center justify-center gap-2 shadow-sm">
+                            Vào Thi Ngay
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SYSTEM NOTICE BANNER -->
+        <section class="bg-amber-50 border border-amber-200 rounded-2xl p-5 flex flex-col sm:flex-row items-start gap-4 mb-8">
+            <div class="bg-amber-500 text-white p-2.5 rounded-xl">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
+            <div class="space-y-1">
+                <h5 class="text-sm font-extrabold text-amber-900">Quy chế tự ôn luyện & Khảo thí:</h5>
+                <p class="text-xs text-amber-800 leading-relaxed font-medium">
+                    Để đạt tiêu chuẩn vận hành thực tế tại các cơ sở, thí sinh cần hoàn thành bài thi với điểm số tối thiểu **80/100 điểm**. Sau khi hoàn tất, hãy chọn tính năng xuất định dạng PDF để nộp lại báo cáo trực tiếp cho Quản lý cửa hàng của bạn.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- CUSTOM WARNING MODAL -->
+    <div id="warning-modal" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl p-6 max-w-sm w-full mx-4 shadow-xl border border-slate-100 transform scale-95 transition-transform duration-300">
+            <div class="text-center">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100 text-mixue-red mb-4">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                </div>
+                <h3 class="text-base font-extrabold text-slate-900 mb-2">Thiếu Thông Tin Thí Sinh!</h3>
+                <p class="text-xs text-slate-500 font-semibold mb-6">Bạn vui lòng điền đầy đủ: "Họ và tên", "Cửa hàng làm việc" và "Ngày thi" ở khung phía trên trước khi tiến hành chọn đề thi.</p>
+                <button onclick="closeWarning()" class="w-full bg-mixue-red text-white font-bold py-2.5 px-4 rounded-xl text-xs hover:bg-red-700 transition duration-200 shadow-md">
+                    Tôi đã hiểu và quay lại điền
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER COPYRIGHT -->
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-xs border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="font-bold text-slate-300 mb-2">Bản quyền thuộc BỘ PHẬN BO-QC & Nhượng Quyền Mixue Việt Nam © 2026</p>
+            <p class="text-slate-500 leading-relaxed max-w-md mx-auto font-semibold">
+                Mọi hành vi sao chép đề thi không chính thống hoặc can thiệp điểm số trái phép sẽ bị xử lý theo quy định bảo mật nhượng quyền Mixue.
+            </p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPTS -->
+    <script>
+        window.onload = function() {
+            // Thiết lập mặc định ngày hôm nay
+            const today = new Date();
+            const dateStr = String(today.getDate()).padStart(2, '0') + '/' + String(today.getMonth() + 1).padStart(2, '0') + '/' + today.getFullYear();
+            
+            // Khôi phục dữ liệu đã nhập từ localStorage
+            const storedName = localStorage.getItem('mixue_candidate_name') || '';
+            const storedStore = localStorage.getItem('mixue_candidate_store') || '';
+            const storedDate = localStorage.getItem('mixue_candidate_date') || dateStr;
+
+            document.getElementById('candidate_name').value = storedName;
+            document.getElementById('candidate_store').value = storedStore;
+            document.getElementById('candidate_date').value = storedDate;
+        };
+
+        function saveInputs() {
+            const name = document.getElementById('candidate_name').value;
+            const store = document.getElementById('candidate_store').value;
+            const date = document.getElementById('candidate_date').value;
+
+            localStorage.setItem('mixue_candidate_name', name);
+            localStorage.setItem('mixue_candidate_store', store);
+            localStorage.setItem('mixue_candidate_date', date);
+        }
+
+        function startExam(file) {
+            const name = document.getElementById('candidate_name').value.trim();
+            const store = document.getElementById('candidate_store').value.trim();
+            const date = document.getElementById('candidate_date').value.trim();
+
+            if (!name || !store || !date) {
+                showWarning();
+                return;
+            }
+
+            // Lưu dữ liệu lần cuối để đảm bảo đồng bộ
+            saveInputs();
+
+            // Chuyển hướng tới trang làm đề thi tương ứng
+            window.location.href = file;
+        }
+
+        function showWarning() {
+            const modal = document.getElementById('warning-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('div').classList.remove('scale-95');
+            }, 50);
+        }
+
+        function closeWarning() {
+            const modal = document.getElementById('warning-modal');
+            modal.classList.add('opacity-0');
+            modal.querySelector('div').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+    </script>
+</body>
+</html>
